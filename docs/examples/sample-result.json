@@ -1,0 +1,383 @@
+{
+  "metadata": {
+    "applicationVersion": "1.0.0",
+    "exportedAtUtc": "2026-04-14T10:30:00Z",
+    "workstationName": "LAB-WS-01",
+    "sessionId": "session-20260414-001",
+    "questionnaireVersion": "2026-04-13",
+    "experimentConfiguration": {
+      "experiment1": [
+        {
+          "sessionId": "Test_1_1",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 40,
+          "nominalSampleDurationMilliseconds": 40000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [73.416, 110.0],
+          "lowFrequencyGainBelowHz": null,
+          "lowFrequencyGainMultiplier": null,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        },
+        {
+          "sessionId": "Test_1_2",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 40,
+          "nominalSampleDurationMilliseconds": 40000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [293.666, 440.0],
+          "lowFrequencyGainBelowHz": null,
+          "lowFrequencyGainMultiplier": null,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        },
+        {
+          "sessionId": "Test_1_3",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 40,
+          "nominalSampleDurationMilliseconds": 40000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [1174.7, 1760.0],
+          "lowFrequencyGainBelowHz": null,
+          "lowFrequencyGainMultiplier": null,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        }
+      ],
+      "experiment2": [
+        {
+          "sessionId": "Test_2_1",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 40,
+          "nominalSampleDurationMilliseconds": 40000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [329.63, 349.23],
+          "lowFrequencyGainBelowHz": null,
+          "lowFrequencyGainMultiplier": null,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        },
+        {
+          "sessionId": "Test_2_2",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 40,
+          "nominalSampleDurationMilliseconds": 40000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [311.13, 415.3],
+          "lowFrequencyGainBelowHz": null,
+          "lowFrequencyGainMultiplier": null,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        },
+        {
+          "sessionId": "Test_2_3",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 40,
+          "nominalSampleDurationMilliseconds": 40000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [261.63, 439.88],
+          "lowFrequencyGainBelowHz": null,
+          "lowFrequencyGainMultiplier": null,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        }
+      ],
+      "experiment3": [
+        {
+          "sessionId": "Test_3_1",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 100,
+          "nominalSampleDurationMilliseconds": 50000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [2500.0, 350.0, 2000.0, 430.0, 1600.0, 550.0],
+          "lowFrequencyGainBelowHz": 600.0,
+          "lowFrequencyGainMultiplier": 2.0,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        },
+        {
+          "sessionId": "Test_3_2",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 100,
+          "nominalSampleDurationMilliseconds": 50000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [550.0, 1600.0, 430.0, 2000.0, 350.0, 2500.0],
+          "lowFrequencyGainBelowHz": 600.0,
+          "lowFrequencyGainMultiplier": 2.0,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        },
+        {
+          "sessionId": "Test_3_3",
+          "startToneDurationMilliseconds": 400,
+          "endToneDurationMilliseconds": 100,
+          "nominalSampleDurationMilliseconds": 50000,
+          "durationMapping": "hyperbolic",
+          "frequenciesHz": [2500.0, 550.0, 2000.0, 430.0, 1600.0, 350.0],
+          "lowFrequencyGainBelowHz": 600.0,
+          "lowFrequencyGainMultiplier": 2.0,
+          "attackReleaseMilliseconds": 10,
+          "requiredValidResponses": 3
+        }
+      ]
+    }
+  },
+  "questionnaire": {
+    "isMusician": true,
+    "gender": "female",
+    "age": 24,
+    "handedness": "right",
+    "musicalEducationDescription": "Completed secondary music school and ongoing university-level sound engineering studies.",
+    "instrumentLearningStartAge": 7,
+    "instrumentPracticeYears": 16,
+    "hasAbsolutePitch": false,
+    "primaryPerformanceGenre": "Classical and contemporary chamber music",
+    "hasAmateurMusicPerformanceExperience": null,
+    "amateurMusicActivityDetails": null,
+    "preferredListeningMusic": null,
+    "studyYearAndSpecialization": null
+  },
+  "Experiment1": {
+    "Session1": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 12890.5,
+          "mappedToneDurationMilliseconds": 147.62,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 13642.8,
+          "mappedToneDurationMilliseconds": 139.15,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 14901.1,
+          "mappedToneDurationMilliseconds": 126.74,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 0,
+      "averageMappedToneDurationMilliseconds": 137.83666666666667
+    },
+    "Session2": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 14302.7,
+          "mappedToneDurationMilliseconds": 132.31,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 15524.2,
+          "mappedToneDurationMilliseconds": 119.88,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 17390.6,
+          "mappedToneDurationMilliseconds": null,
+          "responseCapturedWithinStimulus": false
+        },
+        {
+          "attemptNumber": 4,
+          "rawResponseTimeMilliseconds": 15110.4,
+          "mappedToneDurationMilliseconds": 123.45,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 1,
+      "averageMappedToneDurationMilliseconds": 125.21333333333332
+    },
+    "Session3": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 11785.0,
+          "mappedToneDurationMilliseconds": 161.24,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 12340.3,
+          "mappedToneDurationMilliseconds": 154.76,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 13192.9,
+          "mappedToneDurationMilliseconds": 145.82,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 0,
+      "averageMappedToneDurationMilliseconds": 153.94
+    }
+  },
+  "Experiment2": {
+    "Session1": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 16720.1,
+          "mappedToneDurationMilliseconds": 112.08,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 17014.6,
+          "mappedToneDurationMilliseconds": 109.77,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 17840.4,
+          "mappedToneDurationMilliseconds": 103.95,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 0,
+      "averageMappedToneDurationMilliseconds": 108.60000000000001
+    },
+    "Session2": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 16002.3,
+          "mappedToneDurationMilliseconds": 117.5,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 16588.9,
+          "mappedToneDurationMilliseconds": 113.42,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 17292.7,
+          "mappedToneDurationMilliseconds": 107.8,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 0,
+      "averageMappedToneDurationMilliseconds": 112.90666666666668
+    },
+    "Session3": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 18210.0,
+          "mappedToneDurationMilliseconds": null,
+          "responseCapturedWithinStimulus": false
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 16982.1,
+          "mappedToneDurationMilliseconds": 110.33,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 17421.8,
+          "mappedToneDurationMilliseconds": 106.41,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 4,
+          "rawResponseTimeMilliseconds": 17708.2,
+          "mappedToneDurationMilliseconds": 104.26,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 1,
+      "averageMappedToneDurationMilliseconds": 107
+    }
+  },
+  "Experiment3": {
+    "Session1": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 21420.5,
+          "mappedToneDurationMilliseconds": 157.14,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 22675.3,
+          "mappedToneDurationMilliseconds": 144.63,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 23948.8,
+          "mappedToneDurationMilliseconds": 133.71,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 0,
+      "averageMappedToneDurationMilliseconds": 145.16
+    },
+    "Session2": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 23014.4,
+          "mappedToneDurationMilliseconds": 141.52,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 24320.1,
+          "mappedToneDurationMilliseconds": 130.84,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 25506.0,
+          "mappedToneDurationMilliseconds": 122.77,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 0,
+      "averageMappedToneDurationMilliseconds": 131.71
+    },
+    "Session3": {
+      "attempts": [
+        {
+          "attemptNumber": 1,
+          "rawResponseTimeMilliseconds": 26201.6,
+          "mappedToneDurationMilliseconds": 118.22,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 2,
+          "rawResponseTimeMilliseconds": 27184.9,
+          "mappedToneDurationMilliseconds": 111.63,
+          "responseCapturedWithinStimulus": true
+        },
+        {
+          "attemptNumber": 3,
+          "rawResponseTimeMilliseconds": 28319.5,
+          "mappedToneDurationMilliseconds": 105.94,
+          "responseCapturedWithinStimulus": true
+        }
+      ],
+      "validResponseCount": 3,
+      "nonResponseCount": 0,
+      "averageMappedToneDurationMilliseconds": 111.93
+    }
+  }
+}

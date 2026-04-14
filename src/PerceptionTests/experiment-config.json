@@ -1,0 +1,116 @@
+{
+  "experiment1": [
+    {
+      "sessionId": "Test_1_1",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 40,
+      "nominalSampleDurationMilliseconds": 40000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 73.416, 110.0 ],
+      "lowFrequencyGainBelowHz": null,
+      "lowFrequencyGainMultiplier": null,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    },
+    {
+      "sessionId": "Test_1_2",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 40,
+      "nominalSampleDurationMilliseconds": 40000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 293.666, 440.0 ],
+      "lowFrequencyGainBelowHz": null,
+      "lowFrequencyGainMultiplier": null,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    },
+    {
+      "sessionId": "Test_1_3",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 40,
+      "nominalSampleDurationMilliseconds": 40000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 1174.7, 1760.0 ],
+      "lowFrequencyGainBelowHz": null,
+      "lowFrequencyGainMultiplier": null,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    }
+  ],
+  "experiment2": [
+    {
+      "sessionId": "Test_2_1",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 40,
+      "nominalSampleDurationMilliseconds": 40000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 329.63, 349.23 ],
+      "lowFrequencyGainBelowHz": null,
+      "lowFrequencyGainMultiplier": null,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    },
+    {
+      "sessionId": "Test_2_2",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 40,
+      "nominalSampleDurationMilliseconds": 40000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 311.13, 415.3 ],
+      "lowFrequencyGainBelowHz": null,
+      "lowFrequencyGainMultiplier": null,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    },
+    {
+      "sessionId": "Test_2_3",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 40,
+      "nominalSampleDurationMilliseconds": 40000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 261.63, 439.88 ],
+      "lowFrequencyGainBelowHz": null,
+      "lowFrequencyGainMultiplier": null,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    }
+  ],
+  "experiment3": [
+    {
+      "sessionId": "Test_3_1",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 100,
+      "nominalSampleDurationMilliseconds": 50000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 2500.0, 350.0, 2000.0, 430.0, 1600.0, 550.0 ],
+      "lowFrequencyGainBelowHz": 600.0,
+      "lowFrequencyGainMultiplier": 2.0,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    },
+    {
+      "sessionId": "Test_3_2",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 100,
+      "nominalSampleDurationMilliseconds": 50000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 550.0, 1600.0, 430.0, 2000.0, 350.0, 2500.0 ],
+      "lowFrequencyGainBelowHz": 600.0,
+      "lowFrequencyGainMultiplier": 2.0,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    },
+    {
+      "sessionId": "Test_3_3",
+      "startToneDurationMilliseconds": 400,
+      "endToneDurationMilliseconds": 100,
+      "nominalSampleDurationMilliseconds": 50000,
+      "durationMapping": "hyperbolic",
+      "frequenciesHz": [ 2500.0, 550.0, 2000.0, 430.0, 1600.0, 350.0 ],
+      "lowFrequencyGainBelowHz": 600.0,
+      "lowFrequencyGainMultiplier": 2.0,
+      "attackReleaseMilliseconds": 10,
+      "requiredValidResponses": 3
+    }
+  ]
+}

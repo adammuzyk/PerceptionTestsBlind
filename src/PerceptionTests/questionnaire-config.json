@@ -1,0 +1,142 @@
+{
+  "musician": {
+    "version": "2026-04-13",
+    "fields": [
+      {
+        "fieldId": "gender",
+        "type": "choice",
+        "label": "Gender",
+        "required": true,
+        "options": [
+          { "value": "male", "label": "Male" },
+          { "value": "female", "label": "Female" }
+        ]
+      },
+      {
+        "fieldId": "age",
+        "type": "integerStepper",
+        "label": "Age",
+        "required": true,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "fieldId": "handedness",
+        "type": "choice",
+        "label": "Are you left- or right-handed?",
+        "required": true,
+        "options": [
+          { "value": "left", "label": "Left-handed" },
+          { "value": "right", "label": "Right-handed" }
+        ]
+      },
+      {
+        "fieldId": "musicalEducationDescription",
+        "type": "text",
+        "label": "What formal musical education or training have you completed (e.g. a music school/conservatory, at least one year of university-level music study, or a music-focused academic specialization)?",
+        "required": true
+      },
+      {
+        "fieldId": "instrumentLearningStartAge",
+        "type": "integerStepper",
+        "label": "At what age did you start learning to play a musical instrument?",
+        "required": true,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "fieldId": "instrumentPracticeYears",
+        "type": "integerStepper",
+        "label": "For how many years have you practiced this instrument consistently?",
+        "required": true,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "fieldId": "hasAbsolutePitch",
+        "type": "choice",
+        "label": "Do you have absolute pitch?",
+        "required": true,
+        "options": [
+          { "value": "True", "label": "Yes" },
+          { "value": "False", "label": "No" }
+        ]
+      },
+      {
+        "fieldId": "primaryPerformanceGenre",
+        "type": "text",
+        "label": "What kind of music do you perform most often?",
+        "required": true
+      }
+    ]
+  },
+  "nonMusician": {
+    "version": "2026-04-13",
+    "fields": [
+      {
+        "fieldId": "gender",
+        "type": "choice",
+        "label": "Gender",
+        "required": true,
+        "options": [
+          { "value": "male", "label": "Male" },
+          { "value": "female", "label": "Female" }
+        ]
+      },
+      {
+        "fieldId": "age",
+        "type": "integerStepper",
+        "label": "Age",
+        "required": true,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "fieldId": "handedness",
+        "type": "choice",
+        "label": "Are you left- or right-handed?",
+        "required": true,
+        "options": [
+          { "value": "left", "label": "Left-handed" },
+          { "value": "right", "label": "Right-handed" }
+        ]
+      },
+      {
+        "fieldId": "hasAmateurMusicPerformanceExperience",
+        "type": "choice",
+        "label": "Have you ever taken part in amateur music performance?",
+        "required": true,
+        "options": [
+          { "value": "True", "label": "Yes" },
+          { "value": "False", "label": "No" }
+        ]
+      },
+      {
+        "fieldId": "amateurMusicActivityDetails",
+        "type": "text",
+        "label": "Please describe the musical activity and how long you took part in it.",
+        "required": true,
+        "visibleWhen": {
+          "fieldId": "hasAmateurMusicPerformanceExperience",
+          "equals": "True"
+        }
+      },
+      {
+        "fieldId": "preferredListeningMusic",
+        "type": "text",
+        "label": "What music do you listen to most often?",
+        "required": true
+      },
+      {
+        "fieldId": "studyYearAndSpecialization",
+        "type": "text",
+        "label": "What is your year of study and specialization?",
+        "required": true
+      }
+    ]
+  }
+}

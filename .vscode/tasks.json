@@ -1,0 +1,89 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "restore",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "restore",
+        "${workspaceFolder}/src/PerceptionTests.sln"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "build-debug",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/PerceptionTests.sln",
+        "-c",
+        "Debug",
+        "--no-restore"
+      ],
+      "dependsOn": "restore",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build-release",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/PerceptionTests.sln",
+        "-c",
+        "Release",
+        "--no-restore"
+      ],
+      "dependsOn": "restore",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "run-app",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/src/PerceptionTests/PerceptionTests.csproj",
+        "-c",
+        "Debug",
+        "--no-build"
+      ],
+      "dependsOn": "build-debug",
+      "problemMatcher": []
+    },
+    {
+      "label": "test",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "test",
+        "${workspaceFolder}/src/PerceptionTests.Tests/PerceptionTests.Tests.csproj",
+        "-c",
+        "Release",
+        "--no-build"
+      ],
+      "dependsOn": "build-release",
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "verify",
+      "type": "process",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/verify.ps1"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

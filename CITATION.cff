@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software in research, please cite it using the metadata below."
+title: "PerceptionTests"
+version: "1.0.0"
+type: software
+license: MIT
+authors:
+  - family-names: "[TO BE PROVIDED]"
+    given-names: "[TO BE PROVIDED]"
+    affiliation: "[TO BE PROVIDED]"
+abstract: "Windows WPF application for auditory perception experiments with deterministic PCM stimulus synthesis and structured JSON result export."
+keywords:
+  - auditory scene analysis
+  - psychoacoustics
+  - perception
+  - wpf
+  - csharp
