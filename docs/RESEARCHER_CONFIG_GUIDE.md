@@ -48,7 +48,9 @@ The current application validates the following conditions:
 - `startToneDurationMilliseconds` must be greater than or equal to `endToneDurationMilliseconds`,
 - `requiredValidResponses` must be greater than `0`,
 - `attackReleaseMilliseconds` cannot be negative,
-- `durationMapping` must be `"hyperbolic"`.
+- `durationMapping` must be one of the supported mapping values: `"linear"`, `"logarithmic"`, `"hyperbolic"`, `"sqrt"`, `"root3"`, or `"arctan"`.
+
+The distributed protocol currently uses `"hyperbolic"` for all sessions. Changing `durationMapping` changes how elapsed sample time is converted into generated tone duration and should be treated as a protocol change.
 
 ### Research Guidance
 

@@ -10,6 +10,16 @@ namespace PerceptionTests.Music
     public static class ExperimentCatalog
     {
         private const string DefaultConfigurationFileName = "experiment-config.json";
+        private static readonly IReadOnlyDictionary<string, DurationMappingType> SupportedDurationMappings =
+            new Dictionary<string, DurationMappingType>(StringComparer.OrdinalIgnoreCase)
+            {
+                { "linear", DurationMappingType.Linear },
+                { "logarithmic", DurationMappingType.Logarithmic },
+                { "hyperbolic", DurationMappingType.Hyperbolic },
+                { "sqrt", DurationMappingType.Sqrt },
+                { "root3", DurationMappingType.Root3 },
+                { "arctan", DurationMappingType.ArcTan }
+            };
 
         private static ExperimentConfiguration _configuration;
         private static IReadOnlyDictionary<Session, SessionConfiguration> _sessionLookup;
@@ -54,6 +64,19 @@ namespace PerceptionTests.Music
         {
             EnsureInitialized();
             return _configuration;
+        }
+
+        public static DurationMappingType ParseDurationMapping(string durationMapping)
+        {
+            if (string.IsNullOrWhiteSpace(durationMapping) ||
+                !SupportedDurationMappings.TryGetValue(durationMapping, out var parsed))
+            {
+                throw new InvalidOperationException(
+                    "Unsupported durationMapping '" + durationMapping + "'. Supported values: " +
+                    string.Join(", ", SupportedDurationMappings.Keys) + ".");
+            }
+
+            return parsed;
         }
 
         internal static ExperimentConfiguration LoadConfigurationFromFile(string configurationPath)
@@ -135,10 +158,7 @@ namespace PerceptionTests.Music
                 throw new InvalidOperationException("Session " + session + " attack/release duration cannot be negative.");
             }
 
-            if (!string.Equals(configuration.DurationMapping, "hyperbolic", StringComparison.OrdinalIgnoreCase))
-            {
-                throw new InvalidOperationException("Session " + session + " uses unsupported durationMapping '" + configuration.DurationMapping + "'.");
-            }
+            ParseDurationMapping(configuration.DurationMapping);
         }
 
         private static IEnumerable<SessionConfiguration> EnumerateAllSessions(ExperimentConfiguration configuration)

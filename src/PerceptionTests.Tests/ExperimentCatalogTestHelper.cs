@@ -25,6 +25,49 @@ namespace PerceptionTests.Tests
             return QuestionnaireConfigurationPath.Value;
         }
 
+        public static string InitializeExperimentConfiguration(ExperimentConfiguration configuration, string directoryName)
+        {
+            var directory = Path.Combine(Path.GetTempPath(), "PerceptionTests.Tests", directoryName);
+            Directory.CreateDirectory(directory);
+            var path = Path.Combine(directory, "experiment-config.json");
+            File.WriteAllText(path, JsonConvert.SerializeObject(configuration, Formatting.Indented));
+            ExperimentCatalog.Initialize(path);
+            return path;
+        }
+
+        public static void RestoreDefaultExperimentConfiguration()
+        {
+            ExperimentCatalog.Initialize(ConfigurationPath.Value);
+        }
+
+        public static ExperimentConfiguration CreateExperimentConfigurationWithDurationMappings(
+            string test11DurationMapping,
+            string test12DurationMapping,
+            string test13DurationMapping)
+        {
+            return new ExperimentConfiguration
+            {
+                Experiment1 = new[]
+                {
+                    CreateSession(Session.Test_1_1, 400, 40, 40000, new[] { 440.0 }, null, null, test11DurationMapping),
+                    CreateSession(Session.Test_1_2, 400, 40, 40000, new[] { 440.0 }, null, null, test12DurationMapping),
+                    CreateSession(Session.Test_1_3, 400, 40, 40000, new[] { 440.0 }, null, null, test13DurationMapping)
+                },
+                Experiment2 = new[]
+                {
+                    CreateSession(Session.Test_2_1, 400, 40, 40000, new[] { 440.0 }, null, null, "sqrt"),
+                    CreateSession(Session.Test_2_2, 400, 40, 40000, new[] { 440.0 }, null, null, "root3"),
+                    CreateSession(Session.Test_2_3, 400, 40, 40000, new[] { 440.0 }, null, null, "arctan")
+                },
+                Experiment3 = new[]
+                {
+                    CreateSession(Session.Test_3_1, 400, 100, 50000, new[] { 2500.0, 350.0 }, 600.0, 2.0, "linear"),
+                    CreateSession(Session.Test_3_2, 400, 100, 50000, new[] { 550.0, 1600.0 }, 600.0, 2.0, "logarithmic"),
+                    CreateSession(Session.Test_3_3, 400, 100, 50000, new[] { 2500.0, 550.0 }, 600.0, 2.0, "hyperbolic")
+                }
+            };
+        }
+
         private static string CreateAndInitializeConfiguration()
         {
             var configuration = new ExperimentConfiguration
@@ -114,7 +157,8 @@ namespace PerceptionTests.Tests
             int nominalSampleDurationMilliseconds,
             double[] frequenciesHz,
             double? lowFrequencyGainBelowHz,
-            double? lowFrequencyGainMultiplier)
+            double? lowFrequencyGainMultiplier,
+            string durationMapping = "hyperbolic")
         {
             return new SessionConfiguration
             {
@@ -122,7 +166,7 @@ namespace PerceptionTests.Tests
                 StartToneDurationMilliseconds = startToneDurationMilliseconds,
                 EndToneDurationMilliseconds = endToneDurationMilliseconds,
                 NominalSampleDurationMilliseconds = nominalSampleDurationMilliseconds,
-                DurationMapping = "hyperbolic",
+                DurationMapping = durationMapping,
                 FrequenciesHz = frequenciesHz,
                 LowFrequencyGainBelowHz = lowFrequencyGainBelowHz,
                 LowFrequencyGainMultiplier = lowFrequencyGainMultiplier,

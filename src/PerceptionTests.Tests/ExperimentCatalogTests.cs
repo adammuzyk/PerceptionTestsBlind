@@ -83,6 +83,33 @@ namespace PerceptionTests.Tests
             Assert.Contains("must define at least one frequency", exception.Message);
         }
 
+        [Theory]
+        [InlineData("linear")]
+        [InlineData("logarithmic")]
+        [InlineData("hyperbolic")]
+        [InlineData("sqrt")]
+        [InlineData("root3")]
+        [InlineData("arctan")]
+        public void ValidateSessionConfiguration_AcceptsSupportedDurationMappings(string durationMapping)
+        {
+            var configuration = CreateValidSessionConfiguration(durationMapping);
+
+            ExperimentCatalog.ValidateSessionConfiguration(Session.Test_1_1, configuration);
+        }
+
+        [Fact]
+        public void ValidateSessionConfiguration_ThrowsWhenDurationMappingIsUnsupported()
+        {
+            var configuration = CreateValidSessionConfiguration("unsupported");
+
+            var exception = Assert.Throws<InvalidOperationException>(
+                () => ExperimentCatalog.ValidateSessionConfiguration(Session.Test_1_1, configuration));
+
+            Assert.Contains("Unsupported durationMapping", exception.Message);
+            Assert.Contains("linear", exception.Message);
+            Assert.Contains("hyperbolic", exception.Message);
+        }
+
         [Fact]
         public void LoadConfigurationFromFile_LoadsResearcherEditableJson()
         {
@@ -93,6 +120,21 @@ namespace PerceptionTests.Tests
             Assert.NotNull(configuration);
             Assert.Equal("Test_1_1", configuration.Experiment1[0].SessionId);
             Assert.Equal(3, configuration.Experiment3[0].RequiredValidResponses);
+        }
+
+        private static SessionConfiguration CreateValidSessionConfiguration(string durationMapping)
+        {
+            return new SessionConfiguration
+            {
+                SessionId = Session.Test_1_1.ToString(),
+                StartToneDurationMilliseconds = 400,
+                EndToneDurationMilliseconds = 40,
+                NominalSampleDurationMilliseconds = 40000,
+                DurationMapping = durationMapping,
+                FrequenciesHz = new[] { 440.0 },
+                AttackReleaseMilliseconds = 10,
+                RequiredValidResponses = 3
+            };
         }
     }
 }

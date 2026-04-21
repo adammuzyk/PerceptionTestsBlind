@@ -12,10 +12,12 @@ namespace PerceptionTests.Music
         public Sound[] CreateSample(Session session)
         {
             var configuration = ExperimentCatalog.GetSessionConfiguration(session);
+            var durationMapping = ExperimentCatalog.ParseDurationMapping(configuration.DurationMapping);
             var sample = CreateSample(
                 configuration.StartToneDurationMilliseconds,
                 configuration.EndToneDurationMilliseconds,
                 configuration.NominalSampleDurationMilliseconds,
+                durationMapping,
                 _baseVolume,
                 configuration.FrequenciesHz.ToArray());
 
@@ -35,11 +37,28 @@ namespace PerceptionTests.Music
 
         public Sound[] CreateSample(int msStartSoundDuration, int msEndSoundDuration, int msSampleDuration, ushort volume = 16383, params double[] frequencies)
         {
+            return CreateSample(
+                msStartSoundDuration,
+                msEndSoundDuration,
+                msSampleDuration,
+                DurationMappingType.Hyperbolic,
+                volume,
+                frequencies);
+        }
+
+        public Sound[] CreateSample(
+            int msStartSoundDuration,
+            int msEndSoundDuration,
+            int msSampleDuration,
+            DurationMappingType durationMapping,
+            ushort volume = 16383,
+            params double[] frequencies)
+        {
             double actualTime = 0;
             var notes = new List<Sound>();
             while (actualTime < msSampleDuration)
             {
-                var actualDuration = GetDuration(actualTime, msSampleDuration, msStartSoundDuration, msEndSoundDuration);
+                var actualDuration = GetDuration(actualTime, msSampleDuration, msStartSoundDuration, msEndSoundDuration, durationMapping);
                 actualDuration = Math.Round(actualDuration, 2);
                 foreach (var frequency in frequencies)
                 {
@@ -51,42 +70,32 @@ namespace PerceptionTests.Music
             return notes.ToArray();
         }
 
-        private enum AccelerationType
-        {
-            Linear,
-            Logarithmic,
-            Hyperbolic,
-            Sqrt,
-            Root3,
-            ArcTan
-        }
-
         private double GetDuration(double actualTime, double msSampleDuration, double msStartSoundDuration,
-            double msEndSoundDuration, AccelerationType type = AccelerationType.Hyperbolic)
+            double msEndSoundDuration, DurationMappingType type)
         {
             double from0To1 = actualTime / msSampleDuration;
             double converted;
             switch (type)
             {
-                case AccelerationType.Linear:
+                case DurationMappingType.Linear:
                     converted = from0To1;
                     break;
-                case AccelerationType.Logarithmic:
+                case DurationMappingType.Logarithmic:
                     // Compress the early part of the run so tone shortening happens later.
                     converted = (Math.Log((3.0 * from0To1) + 0.5) - Math.Log(0.5)) / (Math.Log(3.5) - Math.Log(0.5));
                     break;
-                case AccelerationType.Hyperbolic:
-                    // This is the historical mapping used by the experiment and the external JSON config.
+                case DurationMappingType.Hyperbolic:
+                    // This is the historical mapping used by the released experiment configuration.
                     // It shortens tones quickly near the beginning and then tapers toward the end.
                     converted = ((-1.0 / ((3.0 * from0To1) + 1.0)) + 1.0) * (4.0 / 3.0);
                     break;
-                case AccelerationType.Sqrt:
+                case DurationMappingType.Sqrt:
                     converted = Math.Sqrt(from0To1);
                     break;
-                case AccelerationType.Root3:
+                case DurationMappingType.Root3:
                     converted = Math.Pow(from0To1, 1.0 / 3.0);
                     break;
-                case AccelerationType.ArcTan:
+                case DurationMappingType.ArcTan:
                     converted = Math.Atan(3 * from0To1) / Math.Atan(3);
                     break;
                 default:

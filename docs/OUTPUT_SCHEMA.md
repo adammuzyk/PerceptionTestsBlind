@@ -105,6 +105,17 @@ Each session definition contains:
 - `attackReleaseMilliseconds`
 - `requiredValidResponses`
 
+Supported `durationMapping` values are currently:
+
+- `linear`
+- `logarithmic`
+- `hyperbolic`
+- `sqrt`
+- `root3`
+- `arctan`
+
+The distributed experiment configuration uses `hyperbolic` for all sessions unless intentionally changed by the researcher.
+
 ## Notes On Incomplete Runs
 
 Files produced from interrupted runs may contain `null` session slots or fewer completed attempts than expected by the nominal study protocol. Final participant result files should therefore be interpreted together with the session-level counts rather than assuming that every slot is fully populated.
