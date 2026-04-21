@@ -111,6 +111,7 @@ namespace PerceptionTests.Tests
             var field = (IntegerStepperFieldViewModel)viewModel.Fields.Single();
 
             Assert.False(field.HasValue);
+            Assert.Equal(21, field.DefaultValue);
 
             field.Value = 1;
 
@@ -143,6 +144,24 @@ namespace PerceptionTests.Tests
 
             Assert.False(field.HasValue);
             Assert.Null(field.RawValue);
+        }
+
+        [Fact]
+        public void IntegerStepperField_UsesMinimumAsDefaultForNonAgeFields()
+        {
+            var form = new QuestionnaireFormConfiguration
+            {
+                Version = TestVersion,
+                Fields = new QuestionnaireFieldConfiguration[]
+                {
+                    Stepper(QuestionnaireFieldIds.InstrumentPracticeYears, "Practice years")
+                }
+            };
+
+            var viewModel = QuestionnaireFormViewModelFactory.Create(form);
+            var field = (IntegerStepperFieldViewModel)viewModel.Fields.Single();
+
+            Assert.Equal(1, field.DefaultValue);
         }
 
         private static QuestionnaireFormConfiguration CreateConditionalForm()

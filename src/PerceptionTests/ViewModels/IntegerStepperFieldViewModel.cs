@@ -1,3 +1,4 @@
+using PerceptionTests.Domain;
 using PerceptionTests.Models;
 
 namespace PerceptionTests.ViewModels
@@ -12,6 +13,9 @@ namespace PerceptionTests.ViewModels
             Minimum = configuration.Min.Value;
             Maximum = configuration.Max.Value;
             Step = configuration.Step.Value;
+            DefaultValue = configuration.FieldId == QuestionnaireFieldIds.Age
+                ? 21
+                : Minimum;
         }
 
         public int Minimum { get; }
@@ -19,6 +23,8 @@ namespace PerceptionTests.ViewModels
         public int Maximum { get; }
 
         public int Step { get; }
+
+        public int DefaultValue { get; }
 
         public int? Value
         {

@@ -110,6 +110,7 @@
                 <StackPanel Grid.Column="1">
                     <xctk:IntegerUpDown Width="96"
                                         HorizontalAlignment="Left"
+                                        DefaultValue="{Binding DefaultValue}"
                                         Increment="{Binding Step}"
                                         Minimum="{Binding Minimum}"
                                         Maximum="{Binding Maximum}"
