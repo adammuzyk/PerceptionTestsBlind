@@ -15,7 +15,6 @@ From the repository root:
 ```powershell
 dotnet build .\src\PerceptionTests.sln -c Release
 dotnet test .\src\PerceptionTests.Tests\PerceptionTests.Tests.csproj -c Release
-powershell -ExecutionPolicy Bypass -File .\scripts\verify.ps1
 ```
 
 ## Application Notes

@@ -22,12 +22,6 @@ From the repository root:
 dotnet test .\src\PerceptionTests.Tests\PerceptionTests.Tests.csproj -c Release
 ```
 
-or run the full verification script:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\verify.ps1
-```
-
 ## Parallelization
 
 The test assembly disables parallel execution in [`AssemblyInfo.cs`](AssemblyInfo.cs). This is intentional because some tests replace global runtime catalog state while checking alternate experiment and questionnaire configurations.

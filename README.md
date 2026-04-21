@@ -66,8 +66,6 @@ dotnet build .\src\PerceptionTests.sln -c Release --no-restore
 dotnet test .\src\PerceptionTests.sln -c Release --no-build
 ```
 
-The same restore/build/test sequence is wrapped by [`scripts/verify.ps1`](scripts/verify.ps1).
-
 ### Visual Studio
 
 1. Open [`src/PerceptionTests.sln`](src/PerceptionTests.sln) in Visual Studio 2022 or newer.

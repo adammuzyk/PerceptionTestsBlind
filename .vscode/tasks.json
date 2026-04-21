@@ -72,18 +72,6 @@
       "dependsOn": "build-release",
       "group": "test",
       "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "verify",
-      "type": "process",
-      "command": "powershell",
-      "args": [
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
-        "${workspaceFolder}/scripts/verify.ps1"
-      ],
-      "problemMatcher": "$msCompile"
     }
   ]
 }
