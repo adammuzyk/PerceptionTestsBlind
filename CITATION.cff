@@ -2,16 +2,20 @@ cff-version: 1.2.0
 message: "If you use this software in research, please cite it using the metadata below."
 title: "PerceptionTests"
 version: "1.0.1"
+date-released: 2026-05-24
 type: software
 license: MIT
+repository-code: "https://github.com/adammuzyk/PerceptionTestsBlind"
+url: "https://github.com/adammuzyk/PerceptionTestsBlind/releases/tag/v1.0.1"
 authors:
   - family-names: "[TO BE PROVIDED]"
     given-names: "[TO BE PROVIDED]"
     affiliation: "[TO BE PROVIDED]"
-abstract: "Windows WPF application for auditory perception experiments with deterministic PCM stimulus synthesis and structured JSON result export."
+abstract: "PerceptionTests is a Windows desktop application written in C#/WPF for psychoacoustic research in Auditory Scene Analysis. It supports behavioural estimation of auditory stream-segregation thresholds through deterministic synthesis of pure-tone stimuli as 44.1 kHz mono PCM waveforms. The software integrates JSON-defined experimental sessions, configurable tone-duration scheduling, stimulus-aligned response logging, checkpoint persistence, dynamic questionnaire rendering, and structured participant-data capture. Experiment and questionnaire configurations are researcher-editable and validated at startup. Results, questionnaire data, configuration snapshots, and metadata are exported as machine-readable JSON files. By combining explicit waveform synthesis, documented configuration, structured export, and automated tests, PerceptionTests supports reproducible studies of auditory stream formation across participant groups."
 keywords:
   - auditory scene analysis
   - psychoacoustics
-  - perception
-  - wpf
+  - stream-segregation threshold
   - csharp
+  - wpf
+  - pcm synthesis
